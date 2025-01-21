@@ -1,0 +1,38 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!-- Câmp de introducere a valutei (USD/EUR) -->
+    <EditText
+        android:id="@+id/editTextCurrency"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Valută (ex: USD sau EUR)" />
+
+    <!-- Butonul de obținere a cursului -->
+    <Button
+        android:id="@+id/buttonGetRate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obține curs" />
+
+    <!-- TextView unde afișăm cursul primit -->
+    <TextView
+        android:id="@+id/textViewRate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Valoare Bitcoin = ?"
+        android:textSize="16sp"
+        android:paddingTop="16dp" />
+
+    <!-- Butonul de navigare la a doua activitate -->
+    <Button
+        android:id="@+id/buttonGoToCalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Deschide CalculatorActivity"
+        android:layout_marginTop="20dp"/>
+</LinearLayout>
