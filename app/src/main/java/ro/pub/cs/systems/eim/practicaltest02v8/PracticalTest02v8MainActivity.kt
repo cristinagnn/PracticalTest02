@@ -1,5 +1,6 @@
 package ro.pub.cs.systems.eim.practicaltest02v8
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ class PracticalTest02v8MainActivity : AppCompatActivity() {
     private lateinit var editTextCurrency: EditText
     private lateinit var buttonGetRate: Button
     private lateinit var textViewRate: TextView
+    private lateinit var buttonGoToCalculator: Button
 
     private var cache = mutableMapOf<String, Pair<Long, String>>()
 
@@ -27,6 +29,7 @@ class PracticalTest02v8MainActivity : AppCompatActivity() {
         editTextCurrency = findViewById(R.id.editTextCurrency)
         buttonGetRate = findViewById(R.id.buttonGetRate)
         textViewRate = findViewById(R.id.textViewRate)
+        buttonGoToCalculator = findViewById(R.id.buttonGoToCalculator)
 
         // Exemplu de click pe butonul de obținere a cursului
         buttonGetRate.setOnClickListener {
@@ -36,6 +39,12 @@ class PracticalTest02v8MainActivity : AppCompatActivity() {
             } else {
                 textViewRate.text = "Invalid currency. Use USD or EUR."
             }
+        }
+
+        // Click pe buton pentru a deschide activitatea CalculatorActivity
+        buttonGoToCalculator.setOnClickListener {
+            val intent = Intent(this, CalculatorActivity::class.java)
+            startActivity(intent)
         }
     }
 
